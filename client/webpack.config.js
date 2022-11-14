@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       new InjectManifest({
         swSrc: "./src-sw.js",
-        swDest: "./src-sw.js",
+        swDest: "src-sw.js",
       }),
       new HtmlWebpackPlugin({
         template: "./index.html",
@@ -29,14 +29,16 @@ module.exports = () => {
       new WebpackPwaManifest({
         inject: true,
         fingerprints: false,
-        publicPath: "./",
+        start_url: "/",
+        publicPath: "/",
         name: "PWA Text Editor",
         short_name: "Text Editor",
         description: "My awesome Text Editor App!",
-        background_color: "#272822",
+        background_color: "#225ca3",
         icons: {
           src: path.resolve("src/images/logo.png"),
           sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          destination: path.join("assets", "icons"),
         },
       }),
     ],
