@@ -12,8 +12,7 @@
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
-    "client": "cd client && npm start",
-    "postinstall": "webpack -p --config ./webpack.prod.config.js --progress"
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "",
